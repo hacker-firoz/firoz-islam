@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Firoz Islam</title>
+	<link rel="icon" href="firoz-icon.png" type="image/png">
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			user-select: none;
+		}
+		#body{
+			height: 100vh;
+			width: 100vw;
+			overflow: hidden;
+		}
+		#loading-box{
+			width: 250px;
+			height: 75vh;
+			padding: 10px;
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			right: 0px;
+			left: 0px;
+			margin: auto;
+			z-index: 1;
+		}
+		#web-icon{
+			width: 180px;
+			border: 3px solid green;
+			border-radius: 16px;
+		}
+		#web-name{
+			color: green;
+			font-size: 28px;
+			margin-top: 5px;
+		}
+		#loading-img{
+			width: 200px;
+			margin-top: 60px;
+		}
+		#loading-text{
+			color: blue;
+			font-size: 17px;
+			position: relative;
+			top: -30px;
+		}
+
+
+		#login-box{
+			background-color: red;
+			padding: 10px;
+			width: 230px;
+			position: absolute;
+			margin: auto;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			height: 340px;
+			border: 2px solid yellow;
+			border-radius: 15px;
+			z-index: 2;
+			display: none;
+		}
+		#login-admin-img{
+			width: 100px;
+			height: 100px;
+			border: 2px solid yellow;
+			border-radius: 50%;
+			margin-top: 10px;
+		}
+		#login-admin-name{
+			color: white;
+			font-size: 22px;
+		}
+		#login-user-name{
+			width: 85%;
+			padding: 5px 8px;
+			border-radius: 8px;
+			border: 2px solid indigo;
+			margin: 10px 0px 5px 0px;
+			font-size: 20px;
+		}
+		#login-user-password{
+			width: 85%;
+			padding: 5px 8px;
+			border-radius: 8px;
+			border: 2px solid indigo;
+			margin: 5px 0px 5px 0px;
+			font-size: 20px;
+		}
+		#login-error{
+			color: red;
+			background-color: yellow;
+			text-align: center;
+			font-size: 20px;
+			z-index: 3;
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+			width: 230px;
+			height: 90px;
+			border: 2px solid blue;
+			border-radius: 15px;
+			display: none;
+		}
+		#reset-btn{
+			background-color: yellow;
+			padding: 3px 15px;
+			font-size: 20px;
+			border-radius: 8px;
+			border: 2px solid blue;
+			margin: 5px 8px;
+		}
+		#login-btn{
+			background-color: green;
+			padding: 3px 15px;
+			font-size: 20px;
+			border-radius: 8px;
+			border: 2px solid blue;
+			margin: 5px 8px;
+			color: white;
+		}
+		#user-btn{
+			background-color: blue;
+			padding: 3px 10px;
+			width: 188px;
+			font-size: 20px;
+			border-radius: 8px;
+			border: 2px solid yellow;
+			margin: 5px 8px;
+			color: white;
+		}
+		#web-vew{
+			height: 100vh;
+			width: 100vw;
+			display: none;
+		}
+		#back1,#back2{
+			background-color: rgba(255, 0, 0, 0.3);
+			padding: 2px 8px;
+			color: white;
+			position: fixed;
+			bottom: 10px;
+			left: 10px;
+			border: 1px solid yellow;
+			border-radius: 3px;
+			display: none;
+		}
+		#hader{
+			background-color: green;
+			color: white;
+			display: none;
+		}
+		#web-logo{
+			width: 40px;
+			height: 40px;
+			margin: 6px 8px 1px 10px;
+			border: 2px solid yellow;
+			border-radius: 45%;
+			box-shadow: 2px 2px 2px red, -2px -2px 2px red;
+		}
+		#web-title{
+			display: inline-block; 
+			position: relative;
+			top: -14px;
+			font-size: 25px;
+		}
+		#dev-box{
+			background-color: green;
+			padding: 5px;
+			border: 2px solid yellow;
+			border-radius: 20px;
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+			height: 70vh;
+			width: 85vw;
+			z-index: 5;
+			display: none;
+		}
+		#dev-img{
+			width: 130px;
+			border: 2px solid yellow;
+			margin: 5px;
+			border-radius: 40px;
+		}
+		#dev-name{
+			color: white;
+			font-size: 25px;
+			padding-bottom: 5px;
+			border-bottom: 2px solid red;
+			margin-bottom: 5px;
+		}
+		.dev-content{
+			color: white;
+			font-size: 20px;
+			display: block;
+			margin-left: 10px;
+		}
+		a{
+			color: yellow;
+			text-decoration: none;
+		}
+		#dev-fd{
+			background-color: blue;
+			color: white;
+			padding: 2px 5px;
+			font-size: 16px;
+			border: 1px solid white;
+			border-radius: 5px;
+			margin: 5px 15px;
+		}
+		#dev-yt{
+			background-color: red;
+			color: white;
+			padding: 2px 5px;
+			font-size: 16px;
+			border: 1px solid white;
+			border-radius: 5px;
+			margin: 5px 15px;
+		}
+</style>
+</head>
+<body>
+<div id="body">
+
+	<div id="hader">
+		<img onclick="devPre()" id="web-logo" src="firoz1.png">
+		<h3 id="web-title">Adnin Login</h3>
+	</div>
+
+	<div id="dev-box">
+		<center>
+			<img id="dev-img" src="firoz1.png"><br>
+			<h3 id="dev-name">MD. Firoz Islam</h3>		
+		</center>
+		<label class="dev-content">Phone :<a href="tel:01408070472"> 01408070472</a></label>
+		<label class="dev-content">Email : <a href="mailto:private.firozislam@gmail.com?subject=Nice Firoz Islam&body=Hi MD. Firoz Islam. I Am Your Friend">private.firozislam@gmail.com</a></label>
+		<label class="dev-content">Cuntry : Bangladesh </label>
+		<label class="dev-content">Birth Dath : 30-Nov-2003</label>
+		<label class="dev-content">Gender : Male</label>
+		<center>
+			<a href="https://www.facebook.com/mdfiroz.islam.9022"><button id="dev-fd">Facebook</button></a>
+			<a href="https://www.youtube.com/channel/UCoXJq5ilNjvikT_RZgVj9AQ"><button id="dev-yt">Youtube</button></a>
+		</center>
+	</div>
+
+	<div id="loading-box">
+		<center>
+			<img id="web-icon" src="firoz.png"><br>
+			<h3 id="web-name">Firoz Islam</h3>
+			<img id="loading-img" src="loading.gif">
+			<h3 id="loading-text">Loading..</h3>
+		</center>
+	</div>
+
+
+	<div id="login-box">
+		<center>
+			<img id="login-admin-img" src="firoz1.png"><br>
+			<h3 id="login-admin-name">Admin Login</h3>
+			<input id="login-user-name" placeholder="Username" type="text"><br>
+			<input id="login-user-password" placeholder="Password" type="password"><br>
+			<button id="reset-btn" onclick="reset()">Reset</button>
+			<button id="login-btn" onclick="login()">Login</button><br>
+			<button id="user-btn" onclick="user()">User</button>
+		</center>
+	</div>
+
+	<h4 id="login-error"><span style="font-size: 25px;">⚠</span><br>Username Or Password<br>Invalid</h4>
+
+	<iframe id="web-vew"></iframe>
+
+	<button id="back1" onclick="back1()">back</button>
+	<button id="back2" onclick="back2()">back</button>
+	
+</div>
+<script type="text/javascript">
+
+	function devPre(){
+		document.getElementById("dev-box").style.display="block";
+       	setTimeout(function(){
+		   document.getElementById("dev-box").style.display="none";
+		},10000);
+	}
+	
+	setTimeout(loding,10000);
+
+	function loding(){
+		document.getElementById("loading-box").style.display="none";
+		document.getElementById("login-box").style.display="block";
+		document.getElementById("body").style.background="url('love.gif')";
+		document.getElementById("body").style.backgroundSize='cover';
+		document.getElementById("body").style.backgroundPosition='center';
+		document.getElementById("body").style.backgroundRepeat='no-repeat';
+		document.getElementById("body").style.backgroundAttachment='fixed';
+		document.getElementById("back1").style.display="block";
+		document.getElementById("hader").style.display="block";
+		document.getElementById("web-title").innerText="Admin Login";
+	}
+
+	function reset(){
+		document.getElementById("login-user-name").value="";
+		document.getElementById("login-user-password").value="";
+	}
+
+	function login(){
+		var userName = document.getElementById("login-user-name").value;
+		var password = document.getElementById("login-user-password").value;
+		if(userName == "admin_firoz" && password == "admin_firoz"){
+			document.getElementById("login-box").style.display="none";
+			document.getElementById("web-vew").style.display="block";
+			document.getElementById("web-vew").setAttribute("src", "admin.html");
+			document.getElementById("back1").style.display="none";
+			document.getElementById("back2").style.display="block";
+			document.getElementById("web-title").innerText="Firoz Islam Contents";
+		}else{
+       		document.getElementById("login-error").style.display="block";
+       		setTimeout(function(){
+			   document.getElementById("login-error").style.display="none";
+			},3000);
+		}
+	}
+
+	function user(){
+		document.getElementById("login-box").style.display="none";
+		document.getElementById("web-vew").style.display="block";
+		document.getElementById("web-vew").setAttribute("src", "user.html");
+		document.getElementById("back1").style.display="none";
+		document.getElementById("back2").style.display="block";
+		document.getElementById("web-title").innerText="User Contents";
+	}
+
+   function back1(){
+   		document.getElementById("loading-box").style.display="block";
+   		document.getElementById("login-box").style.display="none";
+   		document.getElementById("body").style.background="white";
+   		document.getElementById("back1").style.display="none";
+   		document.getElementById("web-vew").style.display="none";
+   		document.getElementById("hader").style.display="none";
+   		setTimeout(loding,5000);
+   } 
+   function back2(){
+   		document.getElementById("back2").style.display="none";
+   		document.getElementById("web-vew").style.display="none";
+   		document.getElementById("login-box").style.display="block";
+   		document.getElementById("back1").style.display="block";
+   		document.getElementById("web-title").innerText="Admin Login";
+   }
+	
+
+</script>
+</body>
+</html>
