@@ -1,0 +1,91 @@
+*{
+			margin: 0px;
+			padding: 0px;
+			user-select: none;
+		}
+		body{
+			overflow: hidden;
+		}
+		#main-box{
+			height: 100vh;
+			overflow: auto;
+			background-color: green;
+		}
+		#header{
+			background-color: red;
+			color: white;
+			border-bottom: 3px solid yellow;
+		}
+		#web-hadding{
+			padding: 5px 10px;
+			font-size: 20px;
+		}
+		#iframe{
+			min-height: 210px;
+			width: 100%;
+			display: none;
+		}
+		#video-list-box{
+			background-color: green;
+			max-height: 100vh;
+			overflow: auto!;
+		}
+		.list{
+			background-color: yellow;
+			padding: 3px;
+			margin: 5px;
+			border: 2px solid red;
+			border-radius: 5px;
+		}
+		.poster{
+			width: 99px;
+			height: 79px;
+			margin-right: 10px;
+			background-color: red;
+			border: 2px solid red;
+			border-radius: 8px;
+			margin-top: 2px;
+			margin-left: 3px;
+		}
+		.video-title{
+			color: blue;
+			width: 60%;
+			display: inline-block;
+			font-size: 20px;
+			overflow: hidden;
+			position: relative;
+			height: 75px;
+			top: -3px;
+		}
+		.onwer{
+			color: white;
+			background-color: red;
+			font-size: 18px;
+			padding: 2px 8px;
+			border-radius: 5px;
+		}
+		#vt-box{
+			background-color: blue;
+			padding: 5px;
+			white-space: nowrap;
+			display: none;
+		}
+		#vt{
+			color: white;
+			font-size: 22px;
+			white-space: nowrap;
+		}
+		center{
+			color: yellow;
+			font-size: 25px;
+			margin: 20px 0px;
+		}
+		#next{
+			background-color: red;
+			color: white;
+			padding: 3px 5px;
+			margin: 0px 10px 0px 0px;
+			border-radius: 2px;
+			border: 2px solid green;
+			font-size: 20px;
+		}
