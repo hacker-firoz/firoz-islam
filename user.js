@@ -46,3 +46,20 @@ var videoList = [
 		player.setAttribute("src",videoList[3].url+"?autoplay=1");
 		vTitle.innerText=videoList[3].title;
 	}
+	function p5(){
+		player.style.display="block";vtBox.style.display="block";
+		player.setAttribute("src",videoList[4].url+"?autoplay=1");
+		vTitle.innerText=videoList[4].title;
+	}
+
+	function p6(){
+		player.style.display="block";vtBox.style.display="block";
+		player.setAttribute("src",videoList[5].url+"?autoplay=1");
+		vTitle.innerText=videoList[5].title;
+	}
+
+	function p7(){
+		player.style.display="block";vtBox.style.display="block";
+		player.setAttribute("src",videoList[6].url+"?autoplay=1");
+		vTitle.innerText=videoList[6].title;
+	}
